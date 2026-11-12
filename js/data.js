@@ -40,11 +40,12 @@ window.DATA = {
 
   // Galería de fotos
   fotos: [
-    { src: "fotos/conocimos-1.jpg", texto: "El primer día 🦖" },
+    { src: "fotos/conocimos-1.jpg", texto: "Mi foto favorita 💖" },
     { src: "fotos/conocimos-2.jpg", texto: "12 · nov · 2020" },
     { src: "fotos/despues-1.jpg", texto: "¡Hola! 👋" },
     { src: "fotos/despues-2.jpg", texto: "Nosotros 💕" },
-    { src: "fotos/sora.jpg", texto: "Con Sora 🐾" },
+    { src: "fotos/sonrisa.webp", texto: "Tu sonrisa ☀️" },
+    { src: "fotos/sora.jpg", texto: "Sora bebé 🐾" },
     { src: "fotos/viaje.jpg", texto: "De viaje 🌊" },
   ],
 
@@ -64,7 +65,7 @@ window.DATA = {
   // Razones por las que la amas (tarjetas)
   razones: [
     "Porque desde el primer día me haces caminar feliz.",
-    "Tu sonrisa, que me arregla cualquier día.",
+    "Tu sonrisa, la misma que me enamoró el primer día.",
     "Lo bonita que eres con Sora.",
     "Lo dulce que eres, como Cinnamoroll.",
     "Cómo te emocionas con BLACKPINK.",

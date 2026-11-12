@@ -389,3 +389,4 @@ main { position: relative; z-index: 1; }
   .reveal, .tl-card, .polaroid, .like { transform: none !important; }
   .cloud { display: none; }
 }
+.polaroid img[src$="sonrisa.webp"] { object-position: center 18%; }
