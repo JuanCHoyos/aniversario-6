@@ -85,32 +85,43 @@
     return [r.left + r.width / 2, r.top + r.height / 2];
   };
 
-  /* ---------------- Roses ---------------- */
+  /* ---------------- Lirios de los valles ---------------- */
   const palettes = [
-    ["#a8163a", "#e2365b", "#f05a7a"],
-    ["#c2185b", "#ef6f9a", "#ff9fbf"],
-    ["#b31b3c", "#e8435f", "#ff7896"],
+    ["#fff6fa", "#f2b8cf"], // rosado
+    ["#ffffff", "#c9d8e6"], // blanco
+    ["#fdeef5", "#e7a2c0"], // rosado intenso
   ];
-  const roseSVG = ([dark, mid, light]) => `
-  <svg class="rose" viewBox="0 0 120 300">
-    <path class="stem" d="M60 300 C 48 240, 74 170, 60 95"/>
-    <path class="leaf l" d="M58 215 C 40 200, 22 205, 14 216 C 30 228, 48 226, 58 215Z"/>
-    <path class="leaf r" d="M62 180 C 78 162, 98 166, 106 176 C 92 190, 74 192, 62 180Z"/>
-    <g class="bloom">
-      <ellipse cx="40" cy="74" rx="20" ry="22" fill="${dark}"/>
-      <ellipse cx="80" cy="74" rx="20" ry="22" fill="${dark}"/>
-      <path class="petal" d="M28 72 Q28 108 60 110 Q92 108 92 72 Q76 86 60 84 Q44 86 28 72Z" fill="${mid}"/>
-      <ellipse cx="60" cy="64" rx="24" ry="20" fill="${mid}"/>
-      <path d="M48 64 a12 9 0 1 1 24 0 a8 6 0 1 1 -16 0 a4 3 0 1 1 8 0" fill="none" stroke="${dark}" stroke-width="2.4" stroke-linecap="round"/>
-      <path class="petal" d="M28 72 Q36 102 60 104 Q48 86 28 72Z" fill="${light}"/>
-      <path class="petal" d="M92 72 Q84 102 60 104 Q72 86 92 72Z" fill="${light}" opacity="0.85"/>
-    </g>
+  const BELL = "M-7 0 C-8 -11 8 -11 7 0 C7 5 8 8 10 10 C6 9 4 11 2 9 C1 11 -1 11 -2 9 C-4 11 -6 9 -10 10 C-8 8 -7 5 -7 0Z";
+  // puntos del tallo donde cuelgan las campanitas (x, y, lado)
+  const bellPts = [[61, 205, 1], [62, 178, -1], [63, 152, 1], [66, 128, -1], [71, 106, 1], [79, 88, -1], [90, 74, 1]];
+  const lilySVG = ([light, dark], id) => {
+    const bells = bellPts
+      .map(([x, y, side], k) => {
+        const bx = x + side * 13, by = y + 12;
+        const isBud = k >= bellPts.length - 2;
+        const d = (1.5 + k * 0.16).toFixed(2);
+        return `<path class="pedicel" style="--bd:${d}s" d="M${x} ${y} Q${x + side * 10} ${y - 4} ${bx} ${by - 9}"/>
+        <g transform="translate(${bx} ${by}) scale(1.2)"><g class="bell" style="--bd:${d}s">${
+          isBud
+            ? `<circle r="${k === bellPts.length - 1 ? 3.5 : 4.5}" fill="#cfe3a8" stroke="#a9c77e" stroke-width="1"/>`
+            : `<path d="${BELL}" fill="url(#bg${id})" stroke="${dark}" stroke-width="1"/>`
+        }</g></g>`;
+      })
+      .join("");
+    return `
+  <svg class="lily" viewBox="0 0 120 300">
+    <defs><linearGradient id="bg${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${light}"/><stop offset="1" stop-color="${dark}"/></linearGradient></defs>
+    <path class="leaf l" d="M57 300 C26 262 20 214 32 172 C48 212 60 256 57 300Z"/>
+    <path class="leaf r" d="M63 300 C96 266 100 222 90 186 C72 218 62 258 63 300Z"/>
+    <path class="stem" d="M60 300 C58 230 60 160 66 120 C72 92 86 72 104 66"/>
+    ${bells}
   </svg>`;
+  };
   const garden = $("#garden");
   const roseCount = innerWidth < 600 ? 7 : 13;
   for (let i = 0; i < roseCount; i++) {
     const wrap = document.createElement("div");
-    wrap.innerHTML = roseSVG(palettes[i % palettes.length]);
+    wrap.innerHTML = lilySVG(palettes[i % palettes.length], i);
     const svg = wrap.firstElementChild;
     const t = roseCount === 1 ? 0.5 : i / (roseCount - 1);
     const edge = Math.abs(t - 0.5) * 2; // 0 center → 1 edges

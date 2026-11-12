@@ -153,21 +153,21 @@ main { position: relative; z-index: 1; }
 @keyframes bob { 50% { transform: translateY(6px); } }
 
 .garden { position: absolute; inset: auto 0 0 0; height: 60vh; display: flex; justify-content: space-between; align-items: flex-end; pointer-events: none; z-index: 1; }
-.rose { position: absolute; bottom: -6px; width: 120px; height: 300px; overflow: visible; }
-.rose .stem { fill: none; stroke: var(--leaf-dark); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 400; stroke-dashoffset: 400; }
-.rose .leaf { fill: var(--leaf); transform: scale(0); transform-box: fill-box; }
-.rose .leaf.l { transform-origin: right bottom; }
-.rose .leaf.r { transform-origin: left bottom; }
-.rose .bloom { transform: scale(0.2) rotate(-90deg); opacity: 0; transform-box: fill-box; transform-origin: center; }
-.rose .petal { transform-box: fill-box; transform-origin: center bottom; }
-.started .rose .stem { animation: draw 1.6s var(--ease-in-out) forwards; animation-delay: var(--d); }
-.started .rose .leaf { animation: pop 700ms var(--ease-spring) forwards; animation-delay: calc(var(--d) + 0.9s); }
-.started .rose .leaf.r { animation-delay: calc(var(--d) + 1.1s); }
-.started .rose .bloom { animation: bloom 1.3s var(--ease-spring) forwards, sway 5s var(--ease-in-out) infinite; animation-delay: calc(var(--d) + 1.3s), calc(var(--d) + 2.6s); }
+.lily { position: absolute; bottom: -6px; width: 120px; height: 300px; overflow: visible; }
+.lily .stem { fill: none; stroke: #6aa85a; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 360; stroke-dashoffset: 360; }
+.lily .pedicel { fill: none; stroke: #7fb86a; stroke-width: 1.8; stroke-linecap: round; stroke-dasharray: 30; stroke-dashoffset: 30; }
+.lily .leaf { fill: var(--leaf); transform: scale(0.2, 0); opacity: 0; transform-box: fill-box; transform-origin: center bottom; }
+.lily .leaf.r { fill: #4f9e60; }
+.lily .bell { transform: scale(0.3); opacity: 0; transform-box: fill-box; transform-origin: center top; }
+.started .lily .leaf { animation: leafUp 1.2s var(--ease-out) forwards; animation-delay: var(--d); }
+.started .lily .leaf.r { animation-delay: calc(var(--d) + 0.15s); }
+.started .lily .stem { animation: draw 1.5s var(--ease-in-out) forwards; animation-delay: calc(var(--d) + 0.4s); }
+.started .lily .pedicel { animation: draw 400ms var(--ease-out) forwards; animation-delay: calc(var(--d) + var(--bd) - 0.2s); }
+.started .lily .bell { animation: bellIn 800ms var(--ease-spring) forwards, ring 3.2s var(--ease-in-out) infinite; animation-delay: calc(var(--d) + var(--bd)), calc(var(--d) + var(--bd) + 0.8s); }
 @keyframes draw { to { stroke-dashoffset: 0; } }
-@keyframes pop { to { transform: scale(1); } }
-@keyframes bloom { to { transform: scale(1) rotate(0deg); opacity: 1; } }
-@keyframes sway { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+@keyframes leafUp { to { transform: none; opacity: 1; } }
+@keyframes bellIn { to { transform: scale(1); opacity: 1; } }
+@keyframes ring { 0%, 100% { transform: rotate(-7deg); opacity: 1; } 50% { transform: rotate(7deg); opacity: 1; } }
 
 /* ---------- Envelope ---------- */
 .envelope {
