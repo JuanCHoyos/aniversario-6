@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>6 años contigo 💖</title>
+  <meta name="theme-color" content="#cfe8ff" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="locked">
+
+  <!-- Capa de partículas de clic -->
+  <div id="fx" aria-hidden="true"></div>
+
+  <!-- Nubes de fondo -->
+  <div class="sky" aria-hidden="true">
+    <span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span><span class="cloud c4"></span>
+  </div>
+
+  <!-- INTRO -->
+  <section id="intro" class="intro">
+    <div class="intro-card">
+      <div class="intro-mascot" data-mascot></div>
+      <p class="intro-kicker">Tengo algo para ti…</p>
+      <button id="openBtn" class="btn btn-big">
+        <span>Ábrelo</span> <span class="btn-heart">💌</span>
+      </button>
+    </div>
+  </section>
+
+  <main id="app">
+
+    <!-- HERO con rosas -->
+    <section class="hero" id="hero">
+      <div class="garden" id="garden" aria-hidden="true"></div>
+      <div class="hero-text">
+        <p class="eyebrow" data-name></p>
+        <h1 id="title" class="title"></h1>
+        <p id="subtitle" class="subtitle"></p>
+        <div class="counter" id="counter">
+          <div class="unit"><b data-u="d">0</b><small>días</small></div>
+          <div class="unit"><b data-u="h">0</b><small>horas</small></div>
+          <div class="unit"><b data-u="m">0</b><small>minutos</small></div>
+          <div class="unit"><b data-u="s">0</b><small>segundos</small></div>
+        </div>
+        <a href="#carta" class="scroll-hint">Desliza <span>↓</span></a>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section class="section" id="carta">
+      <h2 class="section-title reveal">Una carta para ti</h2>
+      <p class="section-sub reveal">Toca el sobre</p>
+      <button class="envelope reveal" id="envelope" aria-label="Abrir carta">
+        <span class="env-back"></span>
+        <span class="env-letter"><span class="env-letter-lines"></span></span>
+        <span class="env-front"></span>
+        <span class="env-flap"></span>
+        <span class="env-seal">❤</span>
+      </button>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section" id="historia">
+      <h2 class="section-title reveal">Nuestra historia</h2>
+      <p class="section-sub reveal">Toca cada recuerdo</p>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section" id="fotos">
+      <h2 class="section-title reveal">Nosotros</h2>
+      <p class="section-sub reveal">Toca una foto</p>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <!-- GUSTOS -->
+    <section class="section" id="gustos">
+      <h2 class="section-title reveal">Cosas que te encantan</h2>
+      <p class="section-sub reveal">Y que me encantan porque te hacen feliz</p>
+      <div class="likes" id="likes"></div>
+    </section>
+
+    <!-- RAZONES -->
+    <section class="section" id="razones">
+      <h2 class="section-title reveal">Razones por las que te amo</h2>
+      <p class="section-sub reveal">Toca la tarjeta</p>
+      <div class="deck reveal" id="deck"></div>
+      <p class="deck-count" id="deckCount"></p>
+    </section>
+
+    <!-- FINAL -->
+    <section class="section final" id="final">
+      <div class="final-mascot" data-mascot></div>
+      <h2 class="section-title reveal">¿Por muchos años más?</h2>
+      <div class="final-actions reveal">
+        <button class="btn btn-big" id="yesBtn">¡Sí! 💖</button>
+        <button class="btn btn-ghost" id="noBtn">No</button>
+      </div>
+      <p class="signature reveal" id="signature"></p>
+    </section>
+  </main>
+
+  <!-- Cinnamoroll flotante -->
+  <button class="floaty" id="floaty" aria-label="Mascota">
+    <span class="floaty-bubble" id="bubble"></span>
+    <span data-mascot></span>
+  </button>
+
+  <!-- Botón de música -->
+  <button class="music-btn" id="musicBtn" hidden aria-label="Música">♪</button>
+  <audio id="audio" loop preload="none"></audio>
+
+  <!-- Modal carta -->
+  <div class="modal" id="letterModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <article class="letter-paper" role="dialog" aria-modal="true">
+      <button class="modal-x" data-close aria-label="Cerrar">×</button>
+      <div class="letter-body" id="letterBody"></div>
+    </article>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="modal" id="lightbox" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <figure class="lightbox-fig">
+      <button class="modal-x" data-close aria-label="Cerrar">×</button>
+      <div class="lightbox-img" id="lbImg"></div>
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

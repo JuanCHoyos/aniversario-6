@@ -1,0 +1,2 @@
+Pon aquí las fotos (jpg/png/webp, idealmente < 1 MB cada una)
+y escribe sus rutas en js/data.js, por ejemplo: "fotos/primera-cita.jpg"
