@@ -223,10 +223,11 @@
 
   /* ---------------- Photo placeholder helper ---------------- */
   const pastel = ["#cfe8ff,#ffe0ec", "#ffe0ec,#fff4d6", "#e2f5e9,#cfe8ff", "#f1e4ff,#ffe0ec", "#fff4d6,#cfe8ff"];
+  const placeholder = (i) => `<span class="ph-empty" style="display:grid;place-items:center;width:100%;height:100%;background:linear-gradient(135deg,${pastel[i % pastel.length]})">📷</span>`;
+  // Si la foto aún no existe, muestra un recuadro bonito en vez de una imagen rota
+  window.__phFail = (img, i) => { img.outerHTML = placeholder(i); };
   const photoHTML = (src, i, alt = "") =>
-    src
-      ? `<img src="${src}" alt="${alt}" loading="lazy">`
-      : `<span style="display:grid;place-items:center;width:100%;height:100%;background:linear-gradient(135deg,${pastel[i % pastel.length]})">📷</span>`;
+    src ? `<img src="${src}" alt="${alt}" loading="lazy" onerror="__phFail(this, ${i})">` : placeholder(i);
 
   /* ---------------- Timeline ---------------- */
   const tl = $("#timeline");
@@ -240,7 +241,7 @@
         <h3 class="tl-title">${t.titulo}</h3>
         <div class="tl-more"><div>
           <p>${t.texto}</p>
-          ${t.foto ? `<img class="tl-photo" src="${t.foto}" alt="" loading="lazy">` : ""}
+          ${t.foto ? `<img class="tl-photo" src="${t.foto}" alt="" loading="lazy" onerror="this.remove()">` : ""}
         </div></div>
       </button>
     </li>`
@@ -253,7 +254,7 @@
       void item.offsetWidth;
       item.classList.add("jump");
       const [x, y] = centerOf($(".tl-dot", item));
-      burst(x, y, { count: 12, spread: 100, chars: [D.timeline[i].emoji, "✨", "💖"] });
+      burst(x, y, { count: 12, spread: 100, chars: D.timeline[i].chars || [D.timeline[i].emoji, "✨", "💖"] });
     });
   });
   observe($$(".tl-item", tl));
@@ -289,6 +290,37 @@
     setTimeout(() => openModal(lb), 120);
   });
 
+  /* ---------------- Antes y ahora ---------------- */
+  const cmp = $("#compare");
+  const A = D.antesAhora;
+  if (A) {
+    $("#cmpBefore").innerHTML = photoHTML(A.antes, 0, A.textoAntes);
+    $("#cmpAfter").innerHTML = photoHTML(A.ahora, 3, A.textoAhora);
+    $("#cmpTagL").textContent = A.textoAntes;
+    $("#cmpTagR").textContent = A.textoAhora;
+    const range = $("#cmpRange");
+    const setPos = (v) => cmp.style.setProperty("--pos", v + "%");
+    range.addEventListener("input", () => setPos(range.value));
+    range.addEventListener("pointerdown", () => cmp.classList.add("dragging"));
+    addEventListener("pointerup", () => cmp.classList.remove("dragging"));
+    // Pequeña demostración la primera vez que aparece
+    const demo = new IntersectionObserver(([en]) => {
+      if (!en.isIntersecting || reduce) return;
+      demo.disconnect();
+      const t0 = performance.now();
+      const step = (t) => {
+        const k = Math.min(1, (t - t0) / 1800);
+        const v = 50 + Math.sin(k * Math.PI * 2) * 30 * (1 - k);
+        setPos(v); range.value = v;
+        if (k < 1) requestAnimationFrame(step);
+      };
+      setTimeout(() => requestAnimationFrame(step), 700);
+    }, { threshold: 0.6 });
+    demo.observe(cmp);
+  } else {
+    $("#antes").remove();
+  }
+
   /* ---------------- Likes ---------------- */
   const likes = $("#likes");
   likes.innerHTML = D.gustos
@@ -309,7 +341,7 @@
     void b.offsetWidth;
     b.classList.add("boing");
     const [x, y] = centerOf($(".em", b));
-    const chars = /cinnamoroll/i.test(g.texto) ? ["☁️", "💙", "🤍"] : [g.emoji, "💖", "✨"];
+    const chars = g.chars || (/cinnamoroll/i.test(g.texto) ? ["☁️", "💙", "🤍"] : [g.emoji, "💖", "✨"]);
     setTimeout(() => burst(x, y - 20, { count: 12, spread: 110, chars, up: 30 }), 220);
   });
 

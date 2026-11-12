@@ -1,17 +1,17 @@
 /* =========================================================
    TODO EL CONTENIDO PERSONAL VIVE AQUÍ.
    Cambia textos, fechas y fotos sin tocar el resto del código.
-   Las fotos van en la carpeta /fotos (ej: "fotos/primera-cita.jpg").
+   Las fotos van en la carpeta /fotos (ej: "fotos/cartagena.jpg").
    ========================================================= */
 
 window.DATA = {
   ella: "Mi amor",          // su nombre o apodo
   yo: "Juan",               // tu nombre o firma
-  // Fecha y hora en que se conocieron en persona (año, mes-1, día, hora, min)
+  // Fecha en que se conocieron en persona (año, mes-1, día, hora, min)
   fechaConocimos: new Date(2020, 10, 12, 15, 0),
 
   titulo: "6 años desde que te vi por primera vez",
-  subtitulo: "y desde entonces, todo es más bonito",
+  subtitulo: "y ese día caminé de tu casa a la mía de pura felicidad",
 
   // Música opcional: pon un mp3 en /musica y escribe la ruta, ej: "musica/cancion.mp3"
   musica: "",
@@ -19,56 +19,57 @@ window.DATA = {
   carta: {
     saludo: "Mi amor,",
     parrafos: [
-      "Hace seis años te vi por primera vez en persona y no tenía idea de que ese día iba a cambiar mi vida entera.",
-      "Desde entonces has sido mi lugar seguro, mi risa favorita y la persona con la que quiero compartir cada pequeña cosa.",
-      "Gracias por cada abrazo, cada paciencia, cada aventura y cada día normal que contigo se vuelve especial.",
-      "Hice esta página para recordarte, aunque sea un poquito, lo mucho que te amo.",
+      "El 12 de noviembre de 2020 te vi por primera vez en persona. Ese día me fui caminando desde tu casa hasta la mía, y no me importó lo lejos: iba tan feliz que ni sentí el camino.",
+      "Seis años después sigo sintiendo lo mismo. Nos volvimos a ver, nos hicimos novios, llegó Sora a llenarnos la casa de amor, y conocimos juntos Cartagena y Santa Marta.",
+      "Gracias por cada abrazo, cada risa, cada paciencia y cada día normal que contigo se vuelve especial.",
+      "Hice esta página para recordarte, aunque sea un poquito, lo mucho que te amo. Y para decirte que quiero seguir caminando contigo, tan feliz como ese primer día.",
     ],
     despedida: "Por siempre tuyo,",
   },
 
-  // Línea de tiempo. foto es opcional.
+  // Línea de tiempo. foto es opcional (ej: "fotos/cartagena.jpg").
   timeline: [
-    { fecha: "12 nov 2020", titulo: "El día que te conocí", texto: "La primera vez que te vi en persona. Nervios, sonrisas y el inicio de todo.", emoji: "✨", foto: "" },
-    { fecha: "2021", titulo: "Nuestra primera cita", texto: "Cuéntame aquí qué pasó ese día…", emoji: "☕", foto: "" },
-    { fecha: "2022", titulo: "El primer viaje juntos", texto: "Un recuerdo bonito de ese viaje.", emoji: "✈️", foto: "" },
-    { fecha: "2023", titulo: "Un momento inolvidable", texto: "Algo que nunca vamos a olvidar.", emoji: "🌙", foto: "" },
-    { fecha: "2024", titulo: "Creciendo juntos", texto: "Lo que aprendimos y construimos.", emoji: "🌱", foto: "" },
-    { fecha: "2025", titulo: "Más aventuras", texto: "Otro recuerdo que me encanta.", emoji: "🎡", foto: "" },
-    { fecha: "12 nov 2026", titulo: "6 años", texto: "Y apenas estamos empezando.", emoji: "💖", foto: "" },
+    { fecha: "12 nov 2020", titulo: "El día que te conocí", texto: "La primera vez que te vi en persona. Después caminé de tu casa a la mía de la felicidad 👣", emoji: "✨", chars: ["👣", "💖", "✨"], foto: "fotos/conocimos-1.jpg" },
+    { fecha: "Junio 2021", titulo: "Nos volvimos a ver", texto: "Volver a verte confirmó lo que ya sabía: quería estar contigo.", emoji: "🤍", foto: "" },
+    { fecha: "2021", titulo: "Nos hicimos novios", texto: "El día que dijiste que sí y empezó lo nuestro.", emoji: "💍", foto: "" },
+    { fecha: "2022", titulo: "Llegó Sora", texto: "Adoptamos a Sora y nuestra familia se hizo más grande y más feliz.", emoji: "🐾", chars: ["🐾", "💙", "🤍"], foto: "fotos/sora.jpg" },
+    { fecha: "2024", titulo: "Cartagena", texto: "Nuestro primer viaje juntos. Murallas, calor y tú.", emoji: "🏖️", chars: ["🏖️", "☀️", "🌴"], foto: "" },
+    { fecha: "2025", titulo: "Santa Marta", texto: "Otro viaje, más mar y más recuerdos contigo.", emoji: "🌊", chars: ["🌊", "🐚", "☀️"], foto: "" },
+    { fecha: "12 nov 2026", titulo: "6 años", texto: "Y apenas estamos empezando.", emoji: "💖", foto: "fotos/despues-2.jpg" },
   ],
 
   // Galería de fotos
   fotos: [
-    { src: "", texto: "Nosotros 💕" },
-    { src: "", texto: "Mi foto favorita" },
-    { src: "", texto: "Ese día" },
-    { src: "", texto: "Tu sonrisa" },
-    { src: "", texto: "Aventuras" },
-    { src: "", texto: "Siempre juntos" },
+    { src: "fotos/conocimos-1.jpg", texto: "El primer día 🦖" },
+    { src: "fotos/conocimos-2.jpg", texto: "12 · nov · 2020" },
+    { src: "fotos/despues-1.jpg", texto: "¡Hola! 👋" },
+    { src: "fotos/despues-2.jpg", texto: "Nosotros 💕" },
+    { src: "fotos/sora.jpg", texto: "Con Sora 🐾" },
+    { src: "fotos/viaje.jpg", texto: "De viaje 🌊" },
   ],
 
-  // Cosas que le gustan
+  // Sección "Antes y ahora" (deslizador)
+  antesAhora: { antes: "fotos/conocimos-1.jpg", ahora: "fotos/despues-2.jpg", textoAntes: "2020", textoAhora: "Hoy" },
+
+  // Cosas que le gustan. chars = emojis que salen al tocar (opcional)
   gustos: [
     { emoji: "☁️", texto: "Cinnamoroll" },
-    { emoji: "🌹", texto: "Las rosas" },
-    { emoji: "🍰", texto: "Los postres" },
-    { emoji: "🎶", texto: "Su música" },
-    { emoji: "🐶", texto: "Los perritos" },
-    { emoji: "🌅", texto: "Los atardeceres" },
-    { emoji: "🎬", texto: "Las pelis juntos" },
-    { emoji: "🍜", texto: "Su comida favorita" },
+    { emoji: "🖤💗", texto: "BLACKPINK", chars: ["🖤", "💗", "🎤", "✨"] },
+    { emoji: "💛", texto: "La maracuyá", chars: ["💛", "🍹", "💜"] },
+    { emoji: "🐾", texto: "Sora", chars: ["🐾", "💙", "🤍"] },
+    { emoji: "🌹", texto: "Las rosas", chars: ["🌹", "🌸", "💖"] },
+    { emoji: "✈️", texto: "Viajar juntos", chars: ["✈️", "🏖️", "🌊"] },
   ],
 
   // Razones por las que la amas (tarjetas)
   razones: [
+    "Porque desde el primer día me haces caminar feliz.",
     "Tu sonrisa, que me arregla cualquier día.",
-    "Cómo me cuidas sin que te lo pida.",
-    "Tu risa cuando algo te da mucha gracia.",
+    "Lo bonita que eres con Sora.",
     "Lo dulce que eres, como Cinnamoroll.",
+    "Cómo te emocionas con BLACKPINK.",
     "Que contigo hasta lo aburrido es divertido.",
-    "Tu forma de ver el mundo.",
-    "Lo valiente que eres.",
+    "Que cada viaje contigo se vuelve inolvidable.",
     "Que me haces querer ser mejor cada día.",
   ],
 
@@ -77,6 +78,7 @@ window.DATA = {
     "¡Te ama muchísimo! 💙",
     "6 años y contando ☁️",
     "¡Abrazo de nube!",
+    "Sora también te manda besos 🐾",
     "Eres su persona favorita",
     "¡Feliz aniversario! 🎉",
   ],
