@@ -390,3 +390,8 @@ main { position: relative; z-index: 1; }
   .cloud { display: none; }
 }
 .polaroid img[src$="sonrisa.webp"] { object-position: center 18%; }
+.lightbox-img { aspect-ratio: auto; background: #f6f6f6; }
+.lightbox-img img { width: 100%; height: auto; max-height: 72dvh; object-fit: contain; }
+.lightbox-img .ph-empty { aspect-ratio: 4 / 5; }
+.polaroid img[src$="conocimos-2.webp"] { object-position: center 20%; }
+.polaroid img[src$="conocimos-1.webp"] { object-position: center 55%; }

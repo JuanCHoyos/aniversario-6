@@ -1,7 +1,7 @@
 /* =========================================================
    TODO EL CONTENIDO PERSONAL VIVE AQUÍ.
    Cambia textos, fechas y fotos sin tocar el resto del código.
-   Las fotos van en la carpeta /fotos (ej: "fotos/cartagena.jpg").
+   Las fotos van en la carpeta /fotos (ej: "fotos/cartagena.webp").
    ========================================================= */
 
 window.DATA = {
@@ -27,30 +27,30 @@ window.DATA = {
     despedida: "Te amo, hoy y siempre,",
   },
 
-  // Línea de tiempo. foto es opcional (ej: "fotos/cartagena.jpg").
+  // Línea de tiempo. foto es opcional (ej: "fotos/cartagena.webp").
   timeline: [
-    { fecha: "12 nov 2020", titulo: "El día que te conocí", texto: "La primera vez que te vi en persona. Después caminé de tu casa a la mía de la felicidad 👣", emoji: "✨", chars: ["👣", "💖", "✨"], foto: "fotos/conocimos-1.jpg" },
+    { fecha: "12 nov 2020", titulo: "El día que te conocí", texto: "La primera vez que te vi en persona. Después caminé de tu casa a la mía de la felicidad 👣", emoji: "✨", chars: ["👣", "💖", "✨"], foto: "fotos/conocimos-1.webp" },
     { fecha: "Junio 2021", titulo: "Nos volvimos a ver", texto: "Volver a verte confirmó lo que ya sabía: quería estar contigo.", emoji: "🤍", foto: "" },
     { fecha: "2021", titulo: "Nos hicimos novios", texto: "El día que dijiste que sí y empezó lo nuestro.", emoji: "💍", foto: "" },
-    { fecha: "2022", titulo: "Llegó Sora", texto: "Adoptamos a Sora y nuestra familia se hizo más grande y más feliz.", emoji: "🐾", chars: ["🐾", "💙", "🤍"], foto: "fotos/sora.jpg" },
+    { fecha: "2022", titulo: "Llegó Sora", texto: "Adoptamos a Sora y nuestra familia se hizo más grande y más feliz.", emoji: "🐾", chars: ["🐾", "💙", "🤍"], foto: "fotos/sora.webp" },
     { fecha: "2024", titulo: "Cartagena", texto: "Nuestro primer viaje juntos. Murallas, calor y tú.", emoji: "🏖️", chars: ["🏖️", "☀️", "🌴"], foto: "" },
-    { fecha: "2025", titulo: "Santa Marta", texto: "Otro viaje, más mar y más recuerdos contigo.", emoji: "🌊", chars: ["🌊", "🐚", "☀️"], foto: "" },
-    { fecha: "12 nov 2026", titulo: "6 años", texto: "Y apenas estamos empezando.", emoji: "💖", foto: "fotos/despues-2.jpg" },
+    { fecha: "2025", titulo: "Santa Marta", texto: "Otro viaje, más mar y más recuerdos contigo.", emoji: "🌊", chars: ["🌊", "🐚", "☀️"], foto: "fotos/viaje.webp" },
+    { fecha: "12 nov 2026", titulo: "6 años", texto: "Y apenas estamos empezando.", emoji: "💖", foto: "fotos/despues-2.webp" },
   ],
 
   // Galería de fotos
   fotos: [
-    { src: "fotos/conocimos-1.jpg", texto: "Mi foto favorita 💖" },
-    { src: "fotos/conocimos-2.jpg", texto: "12 · nov · 2020" },
-    { src: "fotos/despues-1.jpg", texto: "¡Hola! 👋" },
-    { src: "fotos/despues-2.jpg", texto: "Nosotros 💕" },
+    { src: "fotos/conocimos-1.webp", texto: "Mi foto favorita 💖" },
+    { src: "fotos/conocimos-2.webp", texto: "12 · nov · 2020" },
+    { src: "fotos/despues-1.webp", texto: "Tú, siempre preciosa ✨" },
+    { src: "fotos/despues-2.webp", texto: "Cuando yo era lindo 😅" },
     { src: "fotos/sonrisa.webp", texto: "Tu sonrisa ☀️" },
-    { src: "fotos/sora.jpg", texto: "Sora bebé 🐾" },
-    { src: "fotos/viaje.jpg", texto: "De viaje 🌊" },
+    { src: "fotos/sora.webp", texto: "Sora bebé 🐾" },
+    { src: "fotos/viaje.webp", texto: "Nosotros, hoy 🌊" },
   ],
 
   // Sección "Antes y ahora" (deslizador)
-  antesAhora: { antes: "fotos/conocimos-1.jpg", ahora: "fotos/despues-2.jpg", textoAntes: "2020", textoAhora: "Hoy" },
+  antesAhora: { antes: "fotos/conocimos-1.webp", ahora: "fotos/viaje.webp", textoAntes: "2020", textoAhora: "Hoy" },
 
   // Cosas que le gustan. chars = emojis que salen al tocar (opcional)
   gustos: [
