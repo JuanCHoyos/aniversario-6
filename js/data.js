@@ -19,12 +19,12 @@ window.DATA = {
   carta: {
     saludo: "Mi amor,",
     parrafos: [
-      "El 12 de noviembre de 2020 te vi por primera vez en persona. Ese día me fui caminando desde tu casa hasta la mía, y no me importó lo lejos: iba tan feliz que ni sentí el camino.",
-      "Seis años después sigo sintiendo lo mismo. Nos volvimos a ver, nos hicimos novios, llegó Sora a llenarnos la casa de amor, y conocimos juntos Cartagena y Santa Marta.",
-      "Gracias por cada abrazo, cada risa, cada paciencia y cada día normal que contigo se vuelve especial.",
-      "Hice esta página para recordarte, aunque sea un poquito, lo mucho que te amo. Y para decirte que quiero seguir caminando contigo, tan feliz como ese primer día.",
+      "Desde el primer momento en que te conocí me gustó tu forma de ser. Ese 12 de noviembre de 2020 me fui caminando de tu casa a la mía, y no sentí el camino de lo feliz que iba.",
+      "Hemos pasado tiempos difíciles, pero todavía recuerdo lo que sentí la primera vez que te vi: sentí que eras la persona para mí. Y lo sigo sintiendo.",
+      "Me alegra no haberme rendido las veces que tuvimos dificultades. Me alegra haberte escogido, y que tú me hayas escogido a mí.",
+      "Seis años después, lo tengo más claro que nunca: mi futuro eres tú, y sin ti no lo hay. Mi felicidad está junto a ti.",
     ],
-    despedida: "Por siempre tuyo,",
+    despedida: "Te amo, hoy y siempre,",
   },
 
   // Línea de tiempo. foto es opcional (ej: "fotos/cartagena.jpg").
@@ -56,22 +56,25 @@ window.DATA = {
   gustos: [
     { emoji: "☁️", texto: "Cinnamoroll" },
     { emoji: "🖤💗", texto: "BLACKPINK", chars: ["🖤", "💗", "🎤", "✨"] },
+    { emoji: "🍓", texto: "Las fresas", chars: ["🍓", "💗", "🍓"] },
     { emoji: "💛", texto: "La maracuyá", chars: ["💛", "🍹", "💜"] },
     { emoji: "🐾", texto: "Sora", chars: ["🐾", "💙", "🤍"] },
+    { emoji: "🐱", texto: "Ares", chars: ["🐱", "🐾", "🖤"] },
     { emoji: "🌹", texto: "Las rosas", chars: ["🌹", "🌸", "💖"] },
     { emoji: "✈️", texto: "Viajar juntos", chars: ["✈️", "🏖️", "🌊"] },
   ],
 
-  // Razones por las que la amas (tarjetas)
+  // Razones por las que me haces feliz (tarjetas)
   razones: [
-    "Porque desde el primer día me haces caminar feliz.",
-    "Tu sonrisa, la misma que me enamoró el primer día.",
+    "Tu carita linda.",
+    "Cuando sonríes. La misma sonrisa que me enamoró el primer día.",
+    "Que cuando estoy feliz, me gusta caminar y estar a tu lado.",
+    "Ver películas junto a ti.",
+    "Cuando te pones tierna.",
+    "Cómo amas a Ares.",
     "Lo bonita que eres con Sora.",
-    "Lo dulce que eres, como Cinnamoroll.",
-    "Cómo te emocionas con BLACKPINK.",
-    "Que contigo hasta lo aburrido es divertido.",
-    "Que cada viaje contigo se vuelve inolvidable.",
-    "Que me haces querer ser mejor cada día.",
+    "Que te escogí, y que tú me escogiste.",
+    "Que mi felicidad está junto a ti.",
   ],
 
   // Frases que dice el Cinnamoroll flotante al tocarlo
@@ -80,6 +83,7 @@ window.DATA = {
     "6 años y contando ☁️",
     "¡Abrazo de nube!",
     "Sora también te manda besos 🐾",
+    "Ares dice miau 🐱💖",
     "Eres su persona favorita",
     "¡Feliz aniversario! 🎉",
   ],
