@@ -56,11 +56,12 @@ window.DATA = {
   gustos: [
     { emoji: "☁️", texto: "Cinnamoroll" },
     { emoji: "🖤💗", texto: "BLACKPINK", chars: ["🖤", "💗", "🎤", "✨"] },
+    { emoji: "💜", texto: "BTS", chars: ["💜", "🎤", "✨"] },
+    { emoji: "🖤🎸", texto: "The Cure", chars: ["🖤", "🎸", "🌙"] },
     { emoji: "🍓", texto: "Las fresas", chars: ["🍓", "💗", "🍓"] },
     { emoji: "💛", texto: "La maracuyá", chars: ["💛", "🍹", "💜"] },
     { emoji: "🐾", texto: "Sora", chars: ["🐾", "💙", "🤍"] },
     { emoji: "🐱", texto: "Ares", chars: ["🐱", "🐾", "🖤"] },
-    { emoji: "🌹", texto: "Las rosas", chars: ["🌹", "🌸", "💖"] },
     { emoji: "✈️", texto: "Viajar juntos", chars: ["✈️", "🏖️", "🌊"] },
   ],
 

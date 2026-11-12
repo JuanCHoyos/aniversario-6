@@ -55,7 +55,7 @@
       ).onfinish = () => p.remove();
     }
   }
-  function rain(chars = ["💖", "💗", "🌹", "💕", "☁️", "✨"], n = 60, dur = 3000) {
+  function rain(chars = ["💖", "💗", "🍓", "💕", "☁️", "✨"], n = 60, dur = 3000) {
     for (let i = 0; i < n; i++) {
       setTimeout(() => {
         const p = document.createElement("span");
@@ -213,7 +213,7 @@
     const [x, y] = centerOf(env);
     if (!env.classList.contains("open")) {
       env.classList.add("open");
-      burst(x, y, { count: 18, spread: 160, chars: ["💌", "💖", "💗", "🌹"] });
+      burst(x, y, { count: 18, spread: 160, chars: ["💌", "💖", "💗", "🍓"] });
       setTimeout(() => openModal(letterModal), 1100);
     } else {
       burst(x, y, { count: 8 });
@@ -403,7 +403,7 @@
       celebrated = true;
       const p = document.createElement("p");
       p.className = "celebrate";
-      p.textContent = "¡Sabía que dirías que sí! Feliz aniversario, mi amor 🌹";
+      p.textContent = "¡Sabía que dirías que sí! Feliz aniversario, mi amor 💖";
       $(".final-actions").after(p);
       noBtn.remove();
     }
