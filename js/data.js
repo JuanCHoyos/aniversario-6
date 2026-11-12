@@ -63,6 +63,7 @@ window.DATA = {
     { emoji: "🐾", texto: "Sora", chars: ["🐾", "💙", "🤍"] },
     { emoji: "🐱", texto: "Ares", chars: ["🐱", "🐾", "🖤"] },
     { emoji: "✈️", texto: "Viajar juntos", chars: ["✈️", "🏖️", "🌊"] },
+    { emoji: "🙋‍♂️", texto: "Yo 😌", chars: ["🥰", "💖", "😘", "✨"] },
   ],
 
   // Razones por las que me haces feliz (tarjetas)
